@@ -11,6 +11,8 @@
 |
 */
 
+ini_set('display_errors', 'On');
+
 $app = require __DIR__.'/../bootstrap/app.php';
 
 /*
