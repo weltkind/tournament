@@ -13,6 +13,5 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/', ['uses'=>'Controller@intro', 'as'=>'intro']);
+$router->post('/', ['middleware'=>'validate', 'uses'=>'Controller@tournament']);
