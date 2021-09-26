@@ -3,7 +3,6 @@
 namespace App\Kingdom;
 
 use App\Events\BattleBeginEvent;
-use App\Events\WoundedEvent;
 use App\Interfaces\BattleInterface;
 use App\Interfaces\KnightInterface;
 
@@ -67,8 +66,8 @@ class Battle implements BattleInterface
      */
     private function round(KnightInterface $knight): void
     {
-        $damage = $this->getOpponent($knight)->hit();
-        $knight->setDamage($damage);
-        event(new WoundedEvent($knight, $damage));
+        $opponent = $this->getOpponent($knight);
+        $damage = $opponent->attack($knight);
+        $knight->wound($damage, $opponent);
     }
 }

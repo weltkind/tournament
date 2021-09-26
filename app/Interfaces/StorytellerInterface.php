@@ -20,4 +20,6 @@ interface StorytellerInterface
 
     public function getWounded(KnightInterface $knight, int $damage): void;
 
+    public function magicUsed(KnightInterface $knight, ItemInterface $item): void;
+
 }

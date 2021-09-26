@@ -3,6 +3,7 @@
 namespace App\Kingdom;
 
 use App\Interfaces\AnnalInterface;
+use App\Interfaces\ItemInterface;
 use App\Interfaces\KnightInterface;
 use App\Interfaces\StorytellerInterface;
 
@@ -95,6 +96,15 @@ class Storyteller implements StorytellerInterface
     public function getWounded(KnightInterface $knight, int $damage): void
     {
         $this->tell($knight->getName() . ' got wounded ' . $damage . 'hp');
+    }
+
+    /**
+     * @param KnightInterface $knight
+     * @param ItemInterface $item
+     */
+    public function magicUsed(KnightInterface $knight, ItemInterface $item): void
+    {
+        $this->tell($knight->getName() . ' uses ' . $item->getTitle() . '!');
     }
 
     /**
