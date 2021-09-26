@@ -32,6 +32,10 @@ class EventServiceProvider extends ServiceProvider
         ],
         \App\Events\WinEvent::class => [
             \App\Listeners\WinListener::class,
+        ],
+        \App\Events\ItemEvent::class => [
+            \App\Listeners\MagicListener::class,
         ]
+
     ];
 }

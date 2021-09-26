@@ -39,7 +39,7 @@ class Messenger implements MessengerInterface
     {
         $knights = [];
         for ($i = 0; $i < $this->amount; $i++) {
-            $knight = new Knight($this->churchBook->readName(), 100, $i);
+            $knight = new Knight($this->churchBook->readName(), $i);
             event(new ArriveEvent($knight));
             $knights[] = $knight;
         }
