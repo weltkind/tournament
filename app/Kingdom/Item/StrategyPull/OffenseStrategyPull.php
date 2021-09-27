@@ -10,6 +10,11 @@ use App\Kingdom\Item\Strategy\DeadlyOffense;
 use App\Kingdom\Item\Strategy\MaxOffense;
 use App\Kingdom\Item\StrategyPull;
 
+/**
+ * Class OffenseStrategyPull
+ * Offence strategies pull
+ * @package App\Kingdom\Item\StrategyPull
+ */
 class OffenseStrategyPull extends StrategyPull implements StrategyPullInterface
 {
     /**

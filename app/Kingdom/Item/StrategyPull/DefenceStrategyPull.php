@@ -10,6 +10,11 @@ use App\Kingdom\Item\Strategy\LastTimeDefence;
 use App\Kingdom\Item\Strategy\MaxDefence;
 use App\Kingdom\Item\StrategyPull;
 
+/**
+ * Class DefenceStrategyPull
+ * Defence strategies pull
+ * @package App\Kingdom\Item\StrategyPull
+ */
 class DefenceStrategyPull extends StrategyPull implements StrategyPullInterface
 {
     /**
