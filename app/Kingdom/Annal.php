@@ -5,8 +5,8 @@ namespace App\Kingdom;
 use App\Interfaces\AnnalInterface;
 
 /**
- * Class Book
- * Converts Http annals and uses for output them in a browser
+ * Abstract Class Annal
+ * Contains intonation logic
  * @package App\Kingdom
  */
 abstract class Annal implements AnnalInterface
