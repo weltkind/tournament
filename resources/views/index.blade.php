@@ -1,6 +1,6 @@
 <html>
 <body>
-<h1>Kingdom tournament</h1>
+<h1>The Tournament simulation</h1>
 
 @yield('content')
 
