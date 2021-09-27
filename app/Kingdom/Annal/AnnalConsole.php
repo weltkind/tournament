@@ -46,7 +46,7 @@ class AnnalConsole extends Annal implements AnnalInterface
             case self::INTONATION_MAGIC;
                 return "blue";
             case self::INTONATION_GRAND:
-                return "white";
+                return "gray";
             case self::INTONATION_REWARD:
                 return "yellow";
             case self::INTONATION_DIE:
