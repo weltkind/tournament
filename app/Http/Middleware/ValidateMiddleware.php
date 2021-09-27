@@ -17,7 +17,7 @@ class ValidateMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $majordomo = new Majordomo((int)$request->get('amount'));
+        $majordomo = new Majordomo($request->get('amount'));
         if (!$majordomo->isAllowed()) {
             return redirect()->route('intro', ['error' => $majordomo->whyNot()]);
         }

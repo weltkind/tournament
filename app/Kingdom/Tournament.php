@@ -4,6 +4,7 @@ namespace App\Kingdom;
 
 use App\Events\AllDiesEvent;
 use App\Events\DieEvent;
+use App\Events\Event;
 use App\Events\WinEvent;
 use App\Interfaces\CourtInterface;
 use App\Interfaces\TournamentInterface;
@@ -15,6 +16,9 @@ use App\Interfaces\TournamentInterface;
  */
 class Tournament implements TournamentInterface
 {
+    /**
+     * @var CourtInterface
+     */
     private $court;
 
     /**
@@ -24,7 +28,7 @@ class Tournament implements TournamentInterface
     {
         $this->court = $court;
     }
-
+    
     public function run()
     {
         while (!$this->court->isMoreThanOne()) {
