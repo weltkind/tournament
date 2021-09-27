@@ -1,6 +1,7 @@
 <html>
+<head><title>{{config('app.name')}}</title></head>
 <body>
-<h1>The Tournament simulation</h1>
+<h1>{{config('app.name')}}</h1>
 
 @yield('content')
 

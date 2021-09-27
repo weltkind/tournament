@@ -12,10 +12,19 @@ use App\Interfaces\KnightInterface;
  */
 abstract class Item implements ItemInterface
 {
+    /**
+     * @var boolean
+     */
     private $isUsed;
 
+    /**
+     * @var string
+     */
     protected $title;
 
+    /**
+     * @var KnightInterface
+     */
     protected $knight;
 
     /**

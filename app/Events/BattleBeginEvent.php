@@ -10,7 +10,7 @@ class BattleBeginEvent extends Event implements BattleBeginInterface
     /**
      * @var BattleInterface
      */
-    protected $battle;
+    private $battle;
 
     /**
      * @param BattleInterface $battle

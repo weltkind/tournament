@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'name' => env('APP_NAME', 'The Tournament simulation'),
     'dignities' => ['Lord', 'Sir', 'Barron', 'Earl', 'Marquis', 'Duke', 'Viscount', 'Chevalier'],
     'names' => ['Allan', 'Alford', 'Alvertos', 'Ballard', 'Beacher', 'Birch', 'Burgess', 'Calder', 'Dover', 'Elmer',
         'Kent', 'Lang', 'Miller', 'Oakley', 'Ramsey', 'Redford', 'Terrel', 'Winthrop'],
