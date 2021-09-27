@@ -6,6 +6,7 @@ To install the program, please use the default terminal commands for Lumen appli
 ```
 git clone git@github.com:weltkind/tournament.git
 cd tournament
+mv .env.dist .env
 composer install
 ```
 
