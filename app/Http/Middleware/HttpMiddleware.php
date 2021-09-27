@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Kingdom\Annals\AnnalHttp;
+use App\Kingdom\Annal\AnnalHttp;
 use App\Kingdom\Storyteller;
 use Closure;
 use Illuminate\Http\Request;

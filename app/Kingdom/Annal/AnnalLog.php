@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Kingdom\Annals;
+namespace App\Kingdom\Annal;
 
 use App\Interfaces\AnnalInterface;
+use App\Kingdom\Annal;
 use Illuminate\Support\Facades\Log;
 
 /**
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Log;
  * Kings factory
  * @package App\Kingdom
  */
-class AnnalLog implements AnnalInterface
+class AnnalLog extends Annal implements AnnalInterface
 {
    private $writer;
 

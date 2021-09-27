@@ -43,7 +43,7 @@ class Storyteller implements StorytellerInterface
      */
     public function messengersSent(int $amount): void
     {
-        $this->tell('Messengers were sent for ' . $amount . ' knights...');
+        $this->tell('Messengers have been sent for ' . $amount . ' knights...');
     }
 
     /**
@@ -51,7 +51,7 @@ class Storyteller implements StorytellerInterface
      */
     public function knightDie(KnightInterface $knight): void
     {
-        $this->tell($knight->getName() . ' died valiantly');
+        $this->tell($knight->getName() . ' died valiantly', Annal::INTONATION_DIE);
     }
 
     /**
@@ -59,13 +59,15 @@ class Storyteller implements StorytellerInterface
      */
     public function knightWin(KnightInterface $knight): void
     {
-        $this->tell($knight->getName() . ' victoriously win and was rewarded by the king ... with '
-            .$this->treasury->getReward());
+        $this->tell($knight->getName() . ' victoriously won and was rewarded by the King ...  ',
+            Annal::INTONATION_GRAND);
+        $this->tell('with '. $this->treasury->getReward(), Annal::INTONATION_REWARD);
     }
 
     public function allDies(): void
     {
-        $this->tell('All knights dies in the battle. The king is crying out loud... And ordered to take their property to the treasury.');
+        $this->tell('All knights die in the battle. The King is crying out loud...
+        He ordered to pick up their stuff and put it to the treasury.', Annal::INTONATION_DIE);
     }
 
     /**
@@ -73,7 +75,7 @@ class Storyteller implements StorytellerInterface
      */
     public function knightArrive(KnightInterface $knight): void
     {
-        $this->tell($knight->getName() . ' arrived to the court');
+        $this->tell($knight->getName() . ' arrived to the royal court', Annal::INTONATION_GRAND);
     }
 
     /**
@@ -86,7 +88,7 @@ class Storyteller implements StorytellerInterface
             $names[] = $knight->getName() . ' (' . $knight->getHealthPoints() . ' hp)';
         }
 
-        $this->tell(implode(' vs ', $names));
+        $this->tell(implode(' vs ', $names), Annal::INTONATION_GRAND);
     }
 
     /**
@@ -104,16 +106,17 @@ class Storyteller implements StorytellerInterface
      */
     public function magicUsed(KnightInterface $knight, ItemInterface $item): void
     {
-        $this->tell($knight->getName() . ' uses ' . $item->getTitle() . '!');
+        $this->tell($knight->getName() . ' used ' . $item->getTitle() . '!', Annal::INTONATION_MAGIC);
     }
 
     /**
      * @param string $string
+     * @param string $intonation
      */
-    private function tell(string $string)
+    private function tell(string $string, string $intonation = Annal::INTONATION_REGULAR)
     {
         foreach ($this->annals as $annal) {
-            $annal->info($string);
+            $annal->setIntonation($intonation)->info($string);
         }
     }
 }
