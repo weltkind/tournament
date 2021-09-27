@@ -19,9 +19,9 @@ class Majordomo implements MajordomoInterface
     private $validator;
 
     /**
-     * @param int $amount
+     * @param mixed $amount
      */
-    public function __construct(int $amount)
+    public function __construct($amount)
     {
         $this->validator = Validator::make([
             self::PARAM_NAME => $amount,
