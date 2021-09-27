@@ -6,14 +6,28 @@ use App\Interfaces\ItemInterface;
 use App\Interfaces\KnightInterface;
 use App\Interfaces\UsageStrategyInterface;
 
+/**
+ * Abstract Class Strategy
+ * Contains common logic for all  strategies
+ * @package App\Kingdom\Item
+ */
 abstract class Strategy implements UsageStrategyInterface
 {
     private const KEY = 'app.cube';
 
+    /**
+     * @var ItemInterface
+     */
     protected $item;
 
+    /**
+     * @var KnightInterface
+     */
     protected $knight;
 
+    /**
+     * @var array
+     */
     protected $cube;
 
     /**
