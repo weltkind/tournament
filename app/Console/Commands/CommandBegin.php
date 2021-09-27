@@ -52,7 +52,6 @@ class CommandBegin extends Command
      */
     public function handle()
     {
-        $this->info('test');
         $messenger = new Messenger( $this->askWithValidation('How many knights will we invite (2-100)?'), new ChurchBook());
         $tournament = new Tournament(new Court($messenger->invite()));
         $tournament->run();
