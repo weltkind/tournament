@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Events\BeginEvent;
-use App\Kingdom\Annals\AnnalConsole;
-use App\Kingdom\Annals\AnnalLog;
+use App\Kingdom\Annal\AnnalConsole;
+use App\Kingdom\Annal\AnnalLog;
 use App\Kingdom\ChurchBook;
 use App\Kingdom\Court;
 use App\Kingdom\Messenger;
@@ -52,6 +52,7 @@ class CommandBegin extends Command
      */
     public function handle()
     {
+        $this->info('test');
         $messenger = new Messenger( $this->askWithValidation('How many knights will we invite (2-100)?'), new ChurchBook());
         $tournament = new Tournament(new Court($messenger->invite()));
         $tournament->run();

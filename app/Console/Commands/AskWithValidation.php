@@ -6,8 +6,11 @@ use App\Kingdom\Majordomo;
 
 trait AskWithValidation
 {
-    public function askWithValidation(
-        string $message)
+    /**
+     * @param string $message
+     * @return mixed
+     */
+    public function askWithValidation(string $message)
     {
         $answer = $this->ask($message);
 
